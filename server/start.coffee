@@ -8,6 +8,9 @@ config = require './config'
 app = express()
 app.use express.static  join __dirname, '../public'
 
+# SSO
+app.get '/sso', require './sso'
+
 server = http.createServer(app).listen config.port
 
 # RPC

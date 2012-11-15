@@ -4,7 +4,8 @@
   "dependencies":{
     "coffee-script":"*",
     "express":"*",
-    "vein":"*"
+    "vein":"*",
+    "request":"*"
   },
   "devDependencies": {
     "jaded": "*",
