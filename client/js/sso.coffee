@@ -1,4 +1,4 @@
-define ["app/util"], (util) ->
+define ["app/util", "app/server"], (util, server) ->
   sso =
     getToken: -> $.cookie 'OAuthToken'
     getUser: ->
@@ -36,7 +36,7 @@ define ["app/util"], (util) ->
         $.cookie k,v, opt for k,v of meta
         cb() if cb?
 
-      server.ready -> server.auth ref, p.wrap()
+      server.ready -> server.ns('sso').finishAuth ref, p.wrap()
       return p
 
   return sso

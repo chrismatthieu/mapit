@@ -1,5 +1,5 @@
 
-define(["app/util"], function(util) {
+define(["app/util", "app/server"], function(util, server) {
   var sso;
   sso = {
     getToken: function() {
@@ -62,7 +62,7 @@ define(["app/util"], function(util) {
         }
       });
       server.ready(function() {
-        return server.auth(ref, p.wrap());
+        return server.ns('sso').finishAuth(ref, p.wrap());
       });
       return p;
     }
