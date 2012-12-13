@@ -13,7 +13,6 @@ config.development =
       "ping.uname": 'PSN2AgentlessDemoUser'
       "ping.pwd": 'jlAclUVoA6oAfrlUbOEMo-Troe*'
       "ping.instanceId": "PSN2AgentlessDemo"
-    callback: "http://localhost:8080/"
 
 config.production =
   port: 8080
@@ -25,6 +24,5 @@ config.production =
       "ping.uname": 'BechtelLiveUser'
       "ping.pwd": 'T8Uk192834Ou2161UI7msf'
       "ping.instanceId": "BechtelLive"
-    callback: "http://bechtel.jit.su/"
 
 module.exports = config[process.env.NODE_ENV or "development"]

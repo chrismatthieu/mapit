@@ -3,8 +3,10 @@ config = require './config'
 
 module.exports = 
   handleRequest: (req, res) ->
-    startUrl = "https://sso.mypsn.com/sp/startSSO.ping?PartnerIdpId=PSN2-SAML2-Entity&TargetResource=#{config.sso.callback}"
+    callback = "http://#{req.header('host')}/"
+    startUrl = "https://sso.mypsn.com/sp/startSSO.ping?PartnerIdpId=PSN2-SAML2-Entity&TargetResource=#{callback}"
 
+    console.log config.sso.headers, callback
     req.headers = config.sso.headers
     stream = req.pipe(request(startUrl)).pipe res
     stream.on 'error', (e) -> console.log "sso error #{e}"

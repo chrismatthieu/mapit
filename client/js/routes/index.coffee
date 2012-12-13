@@ -1,9 +1,12 @@
-define ["app/server", "templates/index"], (server, indexTempl) ->
+define ["app/api", "templates/index"], (api, indexTempl) ->
   init: -> @emit 'ready'
   
   show: ->
-    server.ready ->
-      server.example (msg) ->
-        $("#main").html indexTempl message: msg
+    query = api.query 
+      url: "https://api.mypsn.com/svc1/v2/contacts/Search?q=test"
+      mode: "production"
+    
+    query.when (res) ->
+      $("#main").html indexTempl people: res.items
 
   hide: ->

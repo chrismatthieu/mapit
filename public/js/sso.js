@@ -1,5 +1,5 @@
 
-define(["app/util", "app/server"], function(util, server) {
+define(["app/server"], function(server) {
   var sso;
   sso = {
     getToken: function() {
@@ -26,18 +26,13 @@ define(["app/util", "app/server"], function(util, server) {
         if ((typeof history !== "undefined" && history !== null ? history.pushState : void 0) != null) {
           history.pushState(null, null, location.origin + location.hash);
         }
-        return cb(sso.getUser());
+        return cb(null, sso.getUser());
       };
       ref = $.parseQuerystring()['REF'];
       if (sso.getToken() != null) {
         return done();
       } else if (ref != null) {
-        return sso.finishAuth(ref, function(err) {
-          if (err != null) {
-            return util.handleError(err);
-          }
-          return done();
-        });
+        return sso.finishAuth(ref, done);
       } else {
         return window.location.href = '/sso';
       }

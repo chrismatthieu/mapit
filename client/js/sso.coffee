@@ -1,4 +1,4 @@
-define ["app/util", "app/server"], (util, server) ->
+define ["app/server"], (server) ->
   sso =
     getToken: -> $.cookie 'OAuthToken'
     getUser: ->
@@ -16,15 +16,13 @@ define ["app/util", "app/server"], (util, server) ->
     check: (cb) ->
       done = ->
         history.pushState null,null,location.origin+location.hash if history?.pushState?
-        cb sso.getUser()
+        cb null, sso.getUser()
 
       ref = $.parseQuerystring()['REF']
       if sso.getToken()? # SSO done
         done()
       else if ref? # SSO started - finish
-        sso.finishAuth ref, (err) ->
-          return util.handleError err if err?
-          done()
+        sso.finishAuth ref, done
       else # SSO null - needs auth
         window.location.href = '/sso'
 
