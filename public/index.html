@@ -31,6 +31,18 @@
     <script>__reloadServerUrl="ws://localhost:8001";</script>
     <script src="//localhost:8001/__reload/client.js"></script>
 
+    <script>
+      function lookupuser(){
+        window.location.replace("#/index/" + $('#usersearch').val());
+        return false;
+      }
+
+      function logout(){
+        $.cookie("OAuthToken", null, {path:'/'});
+        window.location.replace("/");
+      }
+    </script>    
+
   </head>
   <body>
     <!--[if lt IE 7]>

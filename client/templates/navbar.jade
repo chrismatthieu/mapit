@@ -11,21 +11,22 @@
       .nav-collapse.subnav-collapse
         ul.nav.nav-group
 
-          li#dashnav
+          li#home
             a(href="#/")
-              i.icon-home.icon-white
+              i.icon-home
               |  Home
 
-          li#statnav
-            a(href="#/statistics/")
+          li#about
+            a(href="#/about")
               i.icon-heart
-              |  Statistics
+              |  About
+
+          li.divider-vertical
+
+          form.navbar-search(onsubmit="return lookupuser();")
+            input.search-query(type="text", placeholder="Search", name="q", id="usersearch")
 
 
-          li#servnav
-            a(href="#/services/")
-              i.icon-cog
-              |  Services
 
         ul.nav.pull-right
           li.dropdown
@@ -39,4 +40,5 @@
                 a(tabindex="-1", href="#/settings/") Settings
               li.divider
               li
-                a(tabindex="-1", href="#/logout/") Logout
+                a(tabindex="-1", href="", onclick="logout()") Logout
+

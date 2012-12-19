@@ -1,15 +1,9 @@
 link(rel="stylesheet", href="css/vendor/bootstrap.css")
 
 .row
-  .span2
-      .well.sidebar-nav
-        ul.nav.nav-list
-          li.nav-header Navigation
-          li: a Test
-
-  .span10
+  .span12
     .row
       for p in people
-        .well.span4
+        .well.span5
           h4 #{p.FirstName} #{p.LastName}
           p #{p.PhoneNumber}

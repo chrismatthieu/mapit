@@ -1,10 +1,29 @@
 link(rel="stylesheet", href="css/vendor/ratchet.css")
 header.bar-title
-  a.button-prev(href="#") Previous
+  //a.button-prev(href="#") Back
   h1.title Application
-  a.button-next(href="#") Next
+  a.button-next(href="#/about") About
+
+nav.bar-tab
+  ul.tab-inner
+    li.tab-item.active
+      a(href="/#")
+        img.tab-icon(src="/img/glyphicons_020_home.png")
+        div.tab-label Home
+    li.tab-item
+      a(href="")
+        img.tab-icon(src="/img/glyphicons_003_user.png")
+        div.tab-label Profile
+    li.tab-item
+      a(href="", onclick="logout()")
+        img.tab-icon(src="/img/glyphicons_136_cogwheel.png")
+        div.tab-label Logout
 
 div.content
+  br
+  form(onsubmit="return lookupuser();")
+    input(type="search", placeholder="employee name", name="q", id="usersearch")
+
   ul.list
     for p in people
       li #{p.FirstName} #{p.LastName} #{p.PhoneNumber}

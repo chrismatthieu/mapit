@@ -3,10 +3,15 @@ define(["app/api", "templates/indexdesktop", "templates/indexmobile", "templates
     init: function() {
       return this.emit('ready');
     },
-    show: function() {
+    show: function(args) {
       var query;
+      if(args.search){
+        var q=args.search;
+      } else {
+        var q='test';
+      }
       query = api.query({
-        url: "https://api.mypsn.com/svc1/v2/contacts/Search?q=test",
+        url: "https://api.mypsn.com/svc1/v2/contacts/Search?q=" + q,
         mode: "production"
       });
       return query.when(function(res) {
@@ -24,6 +29,10 @@ define(["app/api", "templates/indexdesktop", "templates/indexmobile", "templates
           $("#main").html(desktopTempl({
             people: res.items
           }))
+  
+          $('.active').removeClass('active');
+          $('#home').addClass('active');
+
         },unmatch : function() {}
 
         }).listen().fire();
