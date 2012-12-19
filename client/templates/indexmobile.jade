@@ -1,0 +1,10 @@
+link(rel="stylesheet", href="css/vendor/ratchet.css")
+header.bar-title
+  a.button-prev(href="#") Previous
+  h1.title Application
+  a.button-next(href="#") Next
+
+div.content
+  ul.list
+    for p in people
+      li #{p.FirstName} #{p.LastName} #{p.PhoneNumber}

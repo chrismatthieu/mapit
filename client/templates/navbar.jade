@@ -1,0 +1,42 @@
+.navbar.navbar-fixed-top.navbar-inverse
+  .navbar-inner
+    .container
+      button.btn.btn-navbar(type="button", data-toggle="collapse", data-target=".nav-collapse")
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+
+      a.brand(href="#") ApplicationName
+
+      .nav-collapse.subnav-collapse
+        ul.nav.nav-group
+
+          li#dashnav
+            a(href="#/")
+              i.icon-home.icon-white
+              |  Home
+
+          li#statnav
+            a(href="#/statistics/")
+              i.icon-heart
+              |  Statistics
+
+
+          li#servnav
+            a(href="#/services/")
+              i.icon-cog
+              |  Services
+
+        ul.nav.pull-right
+          li.dropdown
+            a.dropdown-toggle.avatar-toggle(href="#", data-toggle="dropdown")
+              img.avatar-small(src="/img/avatar.png", height="24", width="24")
+              | #{name.first} #{name.last} 
+              span.caret
+
+            ul.dropdown-menu
+              li
+                a(tabindex="-1", href="#/settings/") Settings
+              li.divider
+              li
+                a(tabindex="-1", href="#/logout/") Logout
