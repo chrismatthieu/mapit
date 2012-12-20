@@ -5,6 +5,7 @@ define(["app/api", "templates/indexdesktop", "templates/indexmobile", "templates
     },
     show: function(args) {
       var query;
+
       if(args.search){
         var q=args.search;
       } else {
@@ -18,16 +19,18 @@ define(["app/api", "templates/indexdesktop", "templates/indexmobile", "templates
 
         enquire.register("screen and (max-width: 480px)", { match : function() {
           $("#main").html(mobileTempl({
-            people: res.items
+            people: res.items,
+            search: q
           }))
         },unmatch : function() {}
         
         }).listen().fire();
 
         enquire.register("screen and (min-width: 768px)", { match : function() {
-          $("#navbar").html(navTempl({}))
+          $("#navbar").html(navTempl({ emailaddress: $.cookie('EMailAddress')}))
           $("#main").html(desktopTempl({
-            people: res.items
+            people: res.items,
+            search: q
           }))
   
           $('.active').removeClass('active');
