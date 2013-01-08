@@ -11,7 +11,7 @@ nav.bar-tab
         img.tab-icon(src="/img/glyphicons_020_home.png")
         div.tab-label Home
     li.tab-item
-      a(href="")
+      a(href="/#/settings")
         img.tab-icon(src="/img/glyphicons_003_user.png")
         div.tab-label Profile
     li.tab-item
@@ -22,8 +22,9 @@ nav.bar-tab
 div.content
   br
   form(onsubmit="return lookupuser();")
-    input(type="search", placeholder="employee search", name="q", id="usersearch")
-  center <b>Searching: #{search}</b>
+    input(type="search", placeholder="employee search", name="q", id="usersearch", value="#{search}")
+  center
+    b Searching: #{search}
   br
 
   ul.list

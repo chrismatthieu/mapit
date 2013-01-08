@@ -4,9 +4,7 @@ define(["templates/aboutdesktop", "templates/aboutmobile", "templates/navbar"], 
       return this.emit('ready');
     },
     show: function() {
-    	console.log('here');
         enquire.register("screen and (max-width: 480px)", { match : function() {
-	    	console.log('here1');
           $("#main").html(mobileTempl({
           }))
         },unmatch : function() {}
@@ -14,8 +12,7 @@ define(["templates/aboutdesktop", "templates/aboutmobile", "templates/navbar"], 
         }).listen().fire();
 
         enquire.register("screen and (min-width: 768px)", { match : function() {
-	    	console.log('here2');
-          $("#navbar").html(navTempl({}))
+          $("#navbar").html(navTempl({ emailaddress: $.cookie('EMailAddress')}))
           $("#main").html(desktopTempl({
           }))
 

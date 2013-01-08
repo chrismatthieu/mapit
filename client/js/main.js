@@ -11,6 +11,7 @@ define(["app/util", "app/server", "app/sso", "app/mixpanel"], function(util, ser
     mix.load(user);
     dermis.route('/');
     dermis.route('/about');
+    dermis.route('/settings');
     dermis.route('/index/:search');
   });
 
