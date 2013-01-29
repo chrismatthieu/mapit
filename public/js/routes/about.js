@@ -12,7 +12,8 @@ define(["templates/aboutdesktop", "templates/aboutmobile", "templates/navbar"], 
         }).listen().fire();
 
         enquire.register("screen and (min-width: 768px)", { match : function() {
-          $("#navbar").html(navTempl({ emailaddress: $.cookie('EMailAddress')}))
+          var v = $("#usersearch").val();
+          $("#navbar").html(navTempl({ emailaddress: $.cookie('EMailAddress'), search: v}))
           $("#main").html(desktopTempl({
           }))
 

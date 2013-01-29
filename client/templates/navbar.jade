@@ -24,7 +24,7 @@
           li.divider-vertical
 
           form.navbar-search(onsubmit="return lookupuser();")
-            input.search-query(type="text", placeholder="Search", name="q", id="usersearch", value="#{search}")
+            input.search-query(type="text", placeholder="Search", name="q", id="usersearch", value="")
 
 
 
@@ -37,7 +37,7 @@
 
             ul.dropdown-menu
               li
-                a(tabindex="-1", href="#/settings/") Settings
+                a(tabindex="-1", href="#/settings") Settings
               li.divider
               li
                 a(tabindex="-1", href="", onclick="logout()") Logout
