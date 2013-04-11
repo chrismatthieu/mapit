@@ -2,23 +2,22 @@
   "name":"boiler",
   "version":"0.0.1",
   "dependencies":{
-    "coffee-script":"*",
+    "coffee-script":"1.4.0",
     "express":"*",
     "vein":"*",
     "request":"*"
   },
   "devDependencies": {
     "jaded": "*",
-    "grunt": "*",
-    "grunt-reload": "*",
-    "grunt-coffee": "*",
-    "grunt-exec": "*",
-    "grunt-contrib": "*",
-    "grunt-jaded": "*",
-    "grunt-check-modules": "*",
-    "grunt-rm": "*",
+    "grunt": "0.3.17",
+    "grunt-reload": "0.2.0",
+    "grunt-coffee": "0.0.6",
+    "grunt-exec": "0.3.0",
+    "grunt-contrib": "0.3.0",
+    "grunt-jaded": "0.1.2",
+    "grunt-rm": "0.0.3",
     "grunt-smushit": "*"
-  },
+    }, 
   "scripts":{
     "start":"coffee server/start.coffee"
   },

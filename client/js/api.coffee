@@ -9,4 +9,4 @@ define ["app/sso", "app/server", "app/util"], (sso, server, util) ->
         return p.abort err if err?
         return p.abort nu.message if nu.message?
         p.resolve nu
-    return p
+    return p 

@@ -84,12 +84,13 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-exec"
   grunt.loadNpmTasks "grunt-coffee"
   grunt.loadNpmTasks "grunt-jaded"
-  grunt.loadNpmTasks "grunt-check-modules"
+  # grunt.loadNpmTasks "grunt-check-modules"
   grunt.loadNpmTasks "grunt-rm"
   grunt.loadNpmTasks "grunt-smushit"
 
   ## default 
-  grunt.registerTask "default", "check-modules rm copy coffee jaded reload start watch"
+  # grunt.registerTask "default", "check-modules rm copy coffee jaded reload start watch"
+  grunt.registerTask "default", "rm copy coffee jaded reload start watch"
 
   ## start
   grunt.registerTask "start", "start up servers", ->
