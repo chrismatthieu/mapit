@@ -16,8 +16,8 @@
     "grunt-contrib": "0.3.0",
     "grunt-jaded": "0.1.2",
     "grunt-rm": "0.0.3",
-    "grunt-smushit": "*"
-    }, 
+    "grunt-smushit": "*"    
+  },
   "scripts":{
     "start":"coffee server/start.coffee"
   },
