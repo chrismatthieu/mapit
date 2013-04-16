@@ -1,0 +1,26 @@
+//- link(rel="stylesheet", href="css/vendor/bootstrap.css")
+
+.container
+  .demo-headline
+    h1.demo-logo MapIt! Project Overlay
+      small Convert Your Project's KML overlay for use with MapIt!
+  .map-load
+    .login-screen
+      .login-icon
+        img(src="img/map.png", alt="Welcome to KML to geoJSON")
+        h4 Welcome to <small>LogIT!</small>
+
+      .login-form
+        form(action="/upload", method="post", enctype="multipart/form-data")
+          .control-group
+            div#filebutn.login-field.filebutn Choose a File
+              //- div(style='height: 0px;width: 0px; overflow:hidden;')
+              input#upfile(name="kmlfile", type="file")
+              label.login-field-icon.fui-location-16(for="login-name")
+          .control-group
+            input#login-pass.login-field(type="text", value="", placeholder="Enter Project Name", name="projname")
+            label.login-field-icon.fui-new-16(for="login-pass")
+          input.btn.btn-success.btn-large.btn-block(type="submit", value="Send")
+
+    p
+      a(href="#/about") about page

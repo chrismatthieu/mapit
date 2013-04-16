@@ -5,6 +5,9 @@
     "coffee-script":"1.4.0",
     "express":"*",
     "vein":"*",
+    "togeojson": "~0.1.1",
+    "jsdom": "*",
+    "multipart": "*",
     "request":"*"
   },
   "devDependencies": {
